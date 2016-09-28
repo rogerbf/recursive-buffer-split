@@ -47,5 +47,13 @@
       "es2015"
     ]
   },
-  "dependencies": {}
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rogerbf/recursive-buffer-split.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rogerbf/recursive-buffer-split/issues"
+  },
+  "homepage": "https://github.com/rogerbf/recursive-buffer-split#readme"
 }
