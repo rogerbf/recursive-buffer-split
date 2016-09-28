@@ -1,7 +1,7 @@
 {
   "name": "recursive-buffer-split",
   "version": "0.0.1",
-  "description": "",
+  "description": "String.prototype.split() for Buffers",
   "main": "./dist/index.js",
   "scripts": {
     "test": "babel-node ./src/index.test.js | faucet",
@@ -12,7 +12,7 @@
     "start:watch": "nodemon --watch src -x npm run start",
     "watch:test": "nodemon -x 'npm test'"
   },
-  "keywords": [],
+  "keywords": ["Buffer", "split", "recursion", "recursive"],
   "author": "rogerbf <roger@bergfalk.nu> (http://bergfalk.nu/)",
   "license": "MIT",
   "devDependencies": {
