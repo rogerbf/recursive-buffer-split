@@ -1,0 +1,6 @@
+node_modules
+dist
+.DS_Store
+package
+recursive-buffer-split*.tgz
+npm-debug.log
