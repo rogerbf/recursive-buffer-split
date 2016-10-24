@@ -1,6 +1,6 @@
 {
   "name": "recursive-buffer-split",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "String.prototype.split() for Buffers",
   "main": "./dist/index.js",
   "scripts": {
