@@ -1,5 +1,4 @@
 function recursiveSplit (delimiter, buff, results = []) {
-
   if (
     delimiter.constructor.name !== `Buffer` ||
     buff.constructor.name !== `Buffer`
@@ -11,12 +10,11 @@ function recursiveSplit (delimiter, buff, results = []) {
     return recursiveSplit(
       delimiter,
       buff.slice(delimiterIndex + delimiter.length),
-      [...results, buff.slice(0, delimiterIndex)]
+      [ ...results, buff.slice(0, delimiterIndex) ]
     )
   } else {
-    return [...results, buff]
+    return [ ...results, buff ]
   }
-
 }
 
 module.exports = recursiveSplit

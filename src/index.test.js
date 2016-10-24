@@ -2,7 +2,6 @@ const test = require(`tape`)
 const recursiveSplit = require(`./index.js`)
 
 test(`recursiveSplit`, assert => {
-
   assert.test(`is a function`, assert => {
     assert.ok(typeof(recursiveSplit) === `function`)
     assert.end()
@@ -16,36 +15,36 @@ test(`recursiveSplit`, assert => {
   })
 
   assert.test(`return input`, assert => {
-    const expected = [ Buffer(`hello`) ]
-    const actual = recursiveSplit(Buffer(`w`), Buffer(`hello`))
+    const expected = [ Buffer.from(`hello`) ]
+    const actual = recursiveSplit(Buffer.from(`w`), Buffer.from(`hello`))
     assert.looseEqual(actual, expected)
     assert.end()
   })
 
   assert.test(`hello world`, assert => {
-    const expected = [ Buffer(`hello`), Buffer(`world`) ]
-    const actual = recursiveSplit(Buffer(`\n\n`), Buffer(`hello\n\nworld`))
+    const expected = [ Buffer.from(`hello`), Buffer.from(`world`) ]
+    const actual = recursiveSplit(Buffer.from(`\n\n`), Buffer.from(`hello\n\nworld`))
     assert.looseEqual(actual, expected)
     assert.end()
   })
 
   assert.test(`two empty`, assert => {
     const expected = [ Buffer.alloc(0), Buffer.alloc(0) ]
-    const actual = recursiveSplit(Buffer(`\n\n`), Buffer(`\n\n`))
+    const actual = recursiveSplit(Buffer.from(`\n\n`), Buffer.from(`\n\n`))
     assert.looseEqual(actual, expected)
     assert.end()
   })
 
   assert.test(`start empty`, assert => {
-    const expected = [ Buffer.alloc(0), Buffer(`hello`) ]
-    const actual = recursiveSplit(Buffer(`\n\n`), Buffer(`\n\nhello`))
+    const expected = [ Buffer.alloc(0), Buffer.from(`hello`) ]
+    const actual = recursiveSplit(Buffer.from(`\n\n`), Buffer.from(`\n\nhello`))
     assert.looseEqual(actual, expected)
     assert.end()
   })
 
   assert.test(`end empty`, assert => {
-    const expected = [ Buffer(`hello`), Buffer.alloc(0) ]
-    const actual = recursiveSplit(Buffer(`\n\n`), Buffer(`hello\n\n`))
+    const expected = [ Buffer.from(`hello`), Buffer.alloc(0) ]
+    const actual = recursiveSplit(Buffer.from(`\n\n`), Buffer.from(`hello\n\n`))
     assert.looseEqual(actual, expected)
     assert.end()
   })
@@ -53,8 +52,8 @@ test(`recursiveSplit`, assert => {
   assert.test(`throws`, assert => {
     assert.throws(() => recursiveSplit())
     assert.throws(() => recursiveSplit(Buffer.alloc(0)))
-    assert.throws(() => recursiveSplit(` `, Buffer(`hello world`)))
-    assert.throws(() => recursiveSplit(Buffer(`\n`), ` `))
+    assert.throws(() => recursiveSplit(` `, Buffer.from(`hello world`)))
+    assert.throws(() => recursiveSplit(Buffer.from(`\n`), ` `))
     assert.end()
   })
 
