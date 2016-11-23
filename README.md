@@ -3,9 +3,9 @@
 Like String.prototype.split() for Buffers. Uses recursion.
 
 ## usage
- 
+
 ``` javascript
-import recursiveSplit from `recursive-buffer-split`
+const recursiveSplit = require(`recursive-buffer-split`)
 
 const buff = Buffer.from(`the humans are dead`)
 
