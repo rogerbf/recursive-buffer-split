@@ -54,6 +54,9 @@ test(`recursiveSplit`, assert => {
     assert.throws(() => recursiveSplit(Buffer.alloc(0)))
     assert.throws(() => recursiveSplit(` `, Buffer.from(`hello world`)))
     assert.throws(() => recursiveSplit(Buffer.from(`\n`), ` `))
+    assert.throws(() => {
+      recursiveSplit(Buffer.from(`\n`), Buffer.from(`hello\nthere`), {})
+    })
     assert.end()
   })
 
