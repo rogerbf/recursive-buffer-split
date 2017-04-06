@@ -5,11 +5,11 @@ Like String.prototype.split() for Buffers. Uses recursion.
 ## usage
 
 ``` javascript
-const recursiveSplit = require(`recursive-buffer-split`)
+const split = require(`recursive-buffer-split`)
 
-const buff = Buffer.from(`the humans are dead`)
+const source = Buffer.from(`the humans are dead`)
 
-recursiveSplit(Buffer.from(` `), buff)
+split(Buffer.from(` `), source)
 // [ <Buffer 74 68 65>,
 //   <Buffer 68 75 6d 61 6e 73>,
 //   <Buffer 61 72 65>,
