@@ -1,6 +1,6 @@
 # recursive-buffer-split
 
-Like String.prototype.split() for Buffers. Uses recursion.
+Recursively split a buffer without intermediate string conversion.
 
 ## usage
 
