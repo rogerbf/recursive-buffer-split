@@ -1,7 +1,7 @@
 {
   "name": "recursive-buffer-split",
   "version": "1.0.3",
-  "description": "Like String.prototype.split() for Buffers. Uses recursion.",
+  "description": "recursively split a buffer without intermediate string conversion",
   "main": "./distribution/index.js",
   "scripts": {
     "test": "jest --config .jest",
@@ -18,7 +18,11 @@
     "coverage": "jest --config .jest --coverage",
     "watch:coverage": "jest --config .jest --coverage --watch"
   },
-  "keywords": [],
+  "keywords": [
+    "buffer",
+    "split",
+    "recursion"
+  ],
   "author": "rogerbf <roger@bergfalk.nu> (http://bergfalk.nu/)",
   "license": "MIT",
   "devDependencies": {
