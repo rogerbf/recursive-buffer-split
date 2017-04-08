@@ -1,12 +1,12 @@
-module.exports = (separator, source) =>
-  (function splitter (next, results = []) {
-    const splitIndex = next.indexOf(separator)
-    return (
-      splitIndex !== -1
-      ? splitter(
-        next.slice(splitIndex + 1),
-        results.concat(next.slice(0, splitIndex))
-      )
-      : results.concat(next)
+module.exports = function split (separator, source, results = []) {
+  const splitIndex = source.indexOf(separator)
+  return (
+    splitIndex === -1
+    ? results.concat(source)
+    : split(
+      separator,
+      source.slice(splitIndex + 1),
+      results.concat(source.slice(0, splitIndex))
     )
-  }(source))
+  )
+}
