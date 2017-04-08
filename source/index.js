@@ -1,16 +1,12 @@
-module.exports = function split (separator, source) {
-  const splitter = (
-    source,
-    nextSplit = source.indexOf(separator),
-    results = []
-  ) =>
-    nextSplit < 0
-    ? results.concat(source)
-    : splitter(
-        source.slice(nextSplit + 1),
-        source.slice(nextSplit + 1).indexOf(separator),
-        results.concat(source.slice(0, nextSplit))
+module.exports = (separator, source) =>
+  (function splitter (next, results = []) {
+    const splitIndex = next.indexOf(separator)
+    return (
+      splitIndex !== -1
+      ? splitter(
+        next.slice(splitIndex + 1),
+        results.concat(next.slice(0, splitIndex))
+      )
+      : results.concat(next)
     )
-
-  return splitter(source)
-}
+  }(source))
