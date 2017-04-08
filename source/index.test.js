@@ -22,3 +22,15 @@ it(`splits a buffer with another buffer`, () => {
   ]
   expect(actual).toEqual(expected)
 })
+
+it(`returns the expected output when buffer ends with separator`, () => {
+  const actual = split(
+    Buffer.from(` `),
+    Buffer.from(`nostromo `)
+  )
+  const expected = [
+    Buffer.from(`nostromo`),
+    Buffer.from(``)
+  ]
+  expect(actual).toEqual(expected)
+})
